@@ -40,3 +40,156 @@ main {
   height: 90dvh;
   position: relative;
 }
+
+.heading-primary {
+  line-height: 0.8;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Special Elite;
+  margin-bottom: 3rem;
+}
+
+.heading-primary--main {
+  color: #333;
+  font-size: 6rem;
+  word-spacing: 1rem;
+  font-weight: 400;
+  animation: MoveInRight 1s;
+}
+
+.heading-primary--sub {
+  color: #333;
+  font-size: 1.3rem;
+  letter-spacing: 1.25rem;
+  font-weight: 100;
+  padding-left: 0.5rem;
+  animation: MoveInLeft 1s;
+}
+
+.heading__button {
+  animation: MoveToUp 1s;
+}
+/* Button */
+
+.button:link,
+.button:visited {
+  font-family: special Elite;
+  color: var(--color-dark);
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  font-size: 1.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  padding: 1.2rem 2rem 1rem 2rem;
+  display: inline-block;
+  border-radius: 5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  border: 1px dashed var(--color-dark);
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.button:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.2);
+}
+
+.button--white {
+  background-color: var(--color-secondary);
+  color: #777;
+}
+.button--white::after {
+  background-color: var(--color-secondary);
+}
+
+.button::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  background-color: var(--color-secondary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.button--animated {
+  animation: MoveToUp 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+.button-text:link,
+.button-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  padding: 3px 6px;
+  border-bottom: 1px solid #55c57a;
+  transition: all 0.2s;
+}
+
+.button-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.button-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
+}
+
+/* Animation */
+@keyframes MoveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes MoveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes MoveToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
